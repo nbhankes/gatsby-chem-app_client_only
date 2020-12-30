@@ -13,7 +13,7 @@ import { ApolloProvider } from "@apollo/client"
 import { gql } from "@apollo/client"
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
+  uri: "https://gatsby-chem-app.herokuapp.com/",
   cache: new InMemoryCache(),
 })
 
