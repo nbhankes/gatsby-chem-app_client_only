@@ -22,7 +22,7 @@ module.exports = {
       options: {
         dbName: `test`,
         collection: `cfactors`,
-        connectionString: `${process.env.GATSBY_APP_MONGO_URI}`,
+        connectionString: `GATSBY_APP_MONGO_URI`,
       },
     },
     `gatsby-transformer-sharp`,

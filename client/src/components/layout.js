@@ -9,8 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../components/Header/header"
-import Nav from "../components/Nav/nav"
+import Header from "./Header/header"
+import Nav from "./Nav/nav"
 
 import "../assets/css/layout.css"
 

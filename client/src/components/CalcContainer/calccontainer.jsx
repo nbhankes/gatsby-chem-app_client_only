@@ -1,6 +1,6 @@
 import React from "react"
 import Decimal from "decimal.js"
-import CalcContainerDropTarget from "../CalcContainer/CalcContainerDropTarget"
+import CalcContainerDropTarget from "./CalcContainerDropTarget"
 import "./calcContainer.css"
 
 //! card formatting comes from cfCard.css
