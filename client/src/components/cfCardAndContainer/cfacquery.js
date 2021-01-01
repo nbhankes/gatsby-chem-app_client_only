@@ -1,5 +1,5 @@
 import React from "react"
-import { useQuery, useMutation } from "@apollo/client"
+import { useQuery } from "@apollo/client"
 import { GET_CFACTOR } from "../../apiCalls/queries"
 //import { DELETE_CFACTOR, REVERSE_CFACTOR } from "../../apiCalls/mutations"
 
