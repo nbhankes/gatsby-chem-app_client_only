@@ -12,7 +12,7 @@ function CFacQuery() {
 
   function deleteAlert() {
     alert(
-      "🛑🛑🛑 You do not have permission to delete this conversion factor.  - Management"
+      "🛑🛑 You do not have permission to delete this conversion factor.  - Management"
     )
   }
 
