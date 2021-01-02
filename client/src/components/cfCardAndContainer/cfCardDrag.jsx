@@ -29,7 +29,7 @@ const CFCardDrag = props => {
 
   return (
     <div
-      role="region"
+      role="alert"
       style={(isDragging ? draggingStyle : {}, cfCardContainerStyle)}
       draggable
       onDragStart={startDrag}

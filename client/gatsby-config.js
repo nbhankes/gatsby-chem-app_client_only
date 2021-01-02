@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.development`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Dimensional Analysis Calculator`,
@@ -15,14 +11,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-mongodb`,
-      options: {
-        dbName: `test`,
-        collection: `cfactors`,
-        connectionString: `GATSBY_APP_MONGO_URI`,
       },
     },
     `gatsby-transformer-sharp`,

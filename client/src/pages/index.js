@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { onError } from "apollo-link-error"
 
 import Layout from "../components/layout"
@@ -13,7 +12,7 @@ import { ApolloProvider } from "@apollo/client"
 import { gql } from "@apollo/client"
 
 const client = new ApolloClient({
-  uri: "https://gatsby-chem-app.herokuapp.com/",
+  uri: "https://gatsby-chem-app.herokuapp.com/graphql",
   cache: new InMemoryCache(),
 })
 
@@ -45,11 +44,9 @@ const IndexPage = ({ data }) => (
   <ApolloProvider client={client}>
     <Layout>
       <SEO title="Home" />
-
       <CFactorForm />
       <CalcContainer />
       <CFacQuery />
-      <Link to="/account/settings">My Account</Link>
     </Layout>
   </ApolloProvider>
 )

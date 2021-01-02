@@ -20,10 +20,23 @@ export default function nav() {
 
   return (
     <div className="nav-banner">
-      <div className="nav-button" onClick={showHideForm}>
+      <div
+        className="nav-button"
+        onClick={showHideForm}
+        onKeyDown={showHideForm}
+        role="button"
+        tabindex="0"
+      >
+        {" "}
         Add Conversion Factor
       </div>
-      <div className="nav-button" onClick={labBookAlert}>
+      <div
+        className="nav-button"
+        onClick={labBookAlert}
+        onKeyDown={labBookAlert}
+        role="button"
+        tabindex="0"
+      >
         Lab Book
       </div>
     </div>

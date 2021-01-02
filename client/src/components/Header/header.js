@@ -16,7 +16,13 @@ function Header({ siteTitle }) {
       <Link className="header-content" to="/">
         {siteTitle}
       </Link>
-      <div className="setting-button" onClick={settingsAlert}>
+      <div
+        className="setting-button"
+        onClick={settingsAlert}
+        onKeyDown={settingsAlert}
+        role="button"
+        tabindex="0"
+      >
         <FaEllipsisV className="settings-icon" />
       </div>
     </header>

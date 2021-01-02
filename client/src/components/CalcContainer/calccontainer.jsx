@@ -69,6 +69,7 @@ export default function CalcContainer(props) {
   const denomUnitArray = items.map(item => item.denomUnit)
 
   //?Removes all empty values from denom units array
+  /* exported denomUnitArrayFiltered */
   const denomUnitArrayFiltered = denomUnitArray.filter(item => item.length > 0)
 
   //?All denominator components in an array
@@ -129,6 +130,8 @@ export default function CalcContainer(props) {
   Decimal.set({ toExpPos: 2 })
 
   ////!Write code to add zeros .concat()
+  /* exported x */
+
   if (finalValueBeforeSigFig <= 999) {
     finalValueConvert = Number.parseFloat(finalValueBeforeSigFig).toString()
     //.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
@@ -141,6 +144,10 @@ export default function CalcContainer(props) {
   //?Handling Units Finds Values unique to numerator and then
   const numUnitUniqueUnfiltered = numUnitArray
   const denomUnitUniqueUnfiltered = denomUnitArray
+
+  /* exported i */
+
+  /* exported j */
 
   for (var i = 0; i < numUnitUniqueUnfiltered.length; i++) {
     for (var j = denomUnitUniqueUnfiltered.length - 1; j > -1; j--) {
