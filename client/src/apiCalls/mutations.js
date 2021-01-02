@@ -39,27 +39,4 @@ const CREATE_CFACTOR = gql`
   }
 `
 
-const DELETE_CFACTOR = gql`
-  mutation deleteCFactor($id: ID!) {
-    deleteCFactor(id: $id) {
-      id
-    }
-  }
-`
-
-const REVERSE_CFACTOR = gql`
-  mutation ReverseCFactor($id: ID!) {
-    reverseCFactor(id: $id) {
-      denom
-      denomExp
-      denomUnit
-      denomComp
-      num
-      numExp
-      numUnit
-      numComp
-    }
-  }
-`
-
-export { CREATE_CFACTOR, DELETE_CFACTOR, REVERSE_CFACTOR }
+export { CREATE_CFACTOR }

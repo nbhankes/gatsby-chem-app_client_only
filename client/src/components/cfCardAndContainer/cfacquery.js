@@ -1,7 +1,6 @@
 import React from "react"
 import { useQuery } from "@apollo/client"
 import { GET_CFACTOR } from "../../apiCalls/queries"
-//import { DELETE_CFACTOR, REVERSE_CFACTOR } from "../../apiCalls/mutations"
 
 import { BiShuffle, BiTrash } from "react-icons/bi"
 import "./cfCard.css"
@@ -10,17 +9,6 @@ import CFCardDrag from "./cfCardDrag"
 
 function CFacQuery() {
   const { loading, error, data } = useQuery(GET_CFACTOR)
-
-  //const [deleteCFactor] = useMutation(DELETE_CFACTOR, {
-  //  refetchQueries: [{ query: GET_CFACTOR }],
-  //})
-
-  //?onClick for delete mutation
-  //onClick={() => {
-  //  deleteCFactor({
-  //    variables: { id: cfactor.id },
-  //  })
-  //}}
 
   function deleteAlert() {
     alert(
@@ -33,17 +21,6 @@ function CFacQuery() {
       "Please visit again to see if this functionality has been added.  - Management"
     )
   }
-
-  //const [reverseCFactor] = useMutation(REVERSE_CFACTOR, {
-  //  refetchQueries: [{ query: GET_CFACTOR }],
-  //})
-
-  //!REverse mutation onClick html
-  //onClick={() => {
-  //  reverseCFactor({
-  //    variables: { id: cfactor.id },
-  //  })
-  //}}
 
   if (loading) return "Loading..."
   if (error) return `Error! ${error.message}`
