@@ -17,10 +17,17 @@ const initialFormData = {
   cfLibrary: "",
   setcfLabel: "",
 }
+
 function CFactorForm() {
   const [formData, setFormData] = useState(initialFormData)
+
+  const resetInput = () => {
+    setFormData(initialFormData)
+  }
+
   const [CreateCFactor, { error }] = useMutation(CREATE_CFACTOR, {
     refetchQueries: [{ query: GET_CFACTOR }],
+    onCompleted: resetInput,
   })
   if (error) {
     console.log("@apollo/client useMutation hook failure: ", error)
@@ -41,7 +48,17 @@ function CFactorForm() {
           event.preventDefault()
           CreateCFactor({
             variables: {
-              ...formData,
+              num: String,
+              numExp: String,
+              numUnit: String,
+              numComp: String,
+              denom: String,
+              denomExp: String,
+              denomUnit: String,
+              denomComp: String,
+              cfLabel: String,
+              cfLibrary: String,
+              setcfLabel: String,
             },
           })
             .then(data => console.log(data))
