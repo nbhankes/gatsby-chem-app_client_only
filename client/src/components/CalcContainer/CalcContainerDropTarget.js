@@ -4,11 +4,11 @@ import * as dropEffects from "../dropEffects"
 import "./calcContainer.css"
 
 const insideStyle = {
-  backgroundColor: "lightgray",
+  backgroundColor: "#ebf5fe",
 }
 
 const dropStyle = {
-  margin: "0 0",
+  backgroundColor: "#9cd1fa",
 }
 
 const CalcContainerDropTarget = props => {
@@ -43,7 +43,7 @@ const CalcContainerDropTarget = props => {
       style={{
         width: "100%",
         height: "100%",
-        ...(isOver ? insideStyle : dropStyle),
+        ...(isOver ? dropStyle : insideStyle),
       }}
     >
       {props.children}
