@@ -17,17 +17,10 @@ const initialFormData = {
   cfLibrary: "",
   setcfLabel: "",
 }
-
 function CFactorForm() {
   const [formData, setFormData] = useState(initialFormData)
-
-  const resetInput = () => {
-    setFormData(initialFormData)
-  }
-
   const [CreateCFactor, { error }] = useMutation(CREATE_CFACTOR, {
     refetchQueries: [{ query: GET_CFACTOR }],
-    onCompleted: resetInput,
   })
   if (error) {
     console.log("@apollo/client useMutation hook failure: ", error)
@@ -48,21 +41,13 @@ function CFactorForm() {
           event.preventDefault()
           CreateCFactor({
             variables: {
-              num: String,
-              numExp: String,
-              numUnit: String,
-              numComp: String,
-              denom: String,
-              denomExp: String,
-              denomUnit: String,
-              denomComp: String,
-              cfLabel: String,
-              cfLibrary: String,
-              setcfLabel: String,
+              ...formData,
             },
           })
             .then(data => console.log(data))
             .catch(error => console.log(error))
+          // Reloads page and updates changes/clears form
+          //window.location.reload()
         }}
       >
         <div className="grid-container">
@@ -71,15 +56,18 @@ function CFactorForm() {
             name="cfLabel"
             id="cfLabel"
             value={formData.cfLabel}
+            // value={cfLabel}
             className="cf-label"
             aria-label="This is the title of your conversion factor, example: Nitrogen Content of calcium nitrate"
             placeholder="Label: Nitrogen mol/grams"
             required
             onChange={handleChange}
+            // onChange={event => setcfLabel(event.target.value)}
           />
           <input
             type="text"
             id="num"
+            // value={num}
             value={formData.num}
             step="any"
             name="num"
@@ -87,6 +75,7 @@ function CFactorForm() {
             placeholder="6.023"
             aria-label="Conversion Factor Numerator Value, a number"
             required
+            // onChange={event => setNum(event.target.value)}
             onChange={handleChange}
           />
           <div className="word-one">e</div>
@@ -95,30 +84,36 @@ function CFactorForm() {
             name="numExp"
             id="numExp"
             value={formData.numExp}
+            // value={numExp}
             className="num-exp"
             aria-label="Conversion Factor Numerator Exponent, ten to the power of this input value"
             placeholder="23"
+            // onChange={event => setNumExp(event.target.value)}
             onChange={handleChange}
           />
           <input
             type="text"
             name="numUnit"
             id="numUnit"
+            // value={numUnit}
             value={formData.numUnit}
             className="num-unit"
             aria-label="Conversion Factor Numerator Units, example: grams"
             placeholder="atoms"
             required
+            // onChange={event => setNumUnit(event.target.value)}
             onChange={handleChange}
           />
           <input
             type="text"
             name="numComp"
             id="numComp"
+            // value={numComp}
             value={formData.numComp}
             className="num-comp"
             aria-label="Conversion Factor Numerator Compound, example: Nitrogen"
             placeholder="Nitrogen"
+            // onChange={event => setNumComp(event.target.value)}
             onChange={handleChange}
           />
           <div className="division"></div>
@@ -127,10 +122,12 @@ function CFactorForm() {
             step="any"
             name="denom"
             id="denom"
+            // value={denom}
             value={formData.denom}
             className="denom"
             aria-label="Conversion Factor Denomenator value, a number"
             placeholder="14.0067"
+            // onChange={event => setDenom(event.target.value)}
             onChange={handleChange}
           />
           <div className="word-two">e</div>
@@ -139,9 +136,11 @@ function CFactorForm() {
             name="denomExp"
             id="denomExp"
             value={formData.denomExp}
+            // value={denomExp}
             className="denom-exp"
             aria-label="Conversion Factor Denomenator Exponent, ten to the power of this input value"
             placeholder=""
+            // onChange={event => setDenomExp(event.target.value)}
             onChange={handleChange}
           />
           <input
@@ -149,9 +148,11 @@ function CFactorForm() {
             name="denomUnit"
             id="denomUnit"
             value={formData.denomUnit}
+            // value={denomUnit}
             className="denom-unit"
             aria-label="Conversion Factor Denomenator Units, example: grams"
             placeholder="grams"
+            // onChange={event => setDenomUnit(event.target.value)}
             onChange={handleChange}
           />
           <input
@@ -159,20 +160,24 @@ function CFactorForm() {
             name="denomComp"
             id="denomComp"
             value={formData.denomComp}
+            // value={denomComp}
             className="denom-comp"
             aria-label="Conversion Factor Denomenator Compound, example: Nitrogen"
             placeholder="Nitrogen"
             onChange={handleChange}
+            // onChange={event => setDenomComp(event.target.value)}
           />
           <input
             type="text"
             name="cfLibrary"
             id="cfLibrary"
             value={formData.cfLibrary}
+            // value={cfLibrary}
             className="cf-lib"
             aria-label="This is the title of your conversion factor, example: Nitrogen Content of calcium nitrate"
             placeholder="Save To: Summer 2020 Fertilizer Trial"
             required
+            // onChange={event => setcfLibrary(event.target.value)}
             onChange={handleChange}
           />
           <button type="submit" className="submit-button">
